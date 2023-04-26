@@ -1,0 +1,4 @@
+jupyterlab
+numpy
+qiskit
+qiskit[visualization]
