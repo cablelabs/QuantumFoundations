@@ -1,12 +1,12 @@
 FROM python:3.11-slim
-RUN useradd -m qc
-USER qc
-ENV PATH="${PATH}:/home/qc/.local/bin"
 WORKDIR /usr/src/QuantumFoundations
+RUN useradd -m qc && chown qc:qc /usr/src/QuantumFoundations
+ENV PATH="${PATH}:/home/qc/.local/bin"
+USER qc
 
-COPY ./requirements.txt ./
+COPY --chown=qc:qc ./requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
-COPY ["Applications.ipynb", "Basics.ipynb", "Demos.ipynb", "Quantum Gates.ipynb", "."]
-COPY ["images", "./images/"]
+COPY --chown=qc:qc ["Applications.ipynb", "Basics.ipynb", "Demos.ipynb", "Quantum Gates.ipynb", "."]
+COPY --chown=qc:qc ["images", "./images/"]
 
 CMD ["jupyter", "lab", "--port=8080", "--ip=0"]
