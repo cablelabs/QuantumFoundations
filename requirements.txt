@@ -1,4 +1,5 @@
 jupyterlab
 numpy
 qiskit
+qiskit-aer
 qiskit[visualization]
