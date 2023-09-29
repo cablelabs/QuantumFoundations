@@ -28,7 +28,24 @@ provided for a convenient way to jump right into the code.
 
 To run the example, simply use `docker compose up` in this directory. Once the
 container has been created, click the link in the log output to navigate to the
-instance of Jupyter lab.
+instance of Jupyter lab. The image below shows an example of the link to
+navigate to:
+
+![](./images/QC_Docker_Link.png)
+
+Your browser should navigate to the Jupyter Lab interface, from which you will
+be able to open any of the example notebooks and execute their content.
+
+To stop running the example notebook server, simply perform a `ctrl-c` in the
+terminal running `docker compose`. The `docker-compose.yml` configuration
+defines volumes that will persist any changes made to the notebooks (or
+additional notebooks you may want to create). The easiest way to perform a full
+reset of the example is to perform the following in this directory:
+
+```sh
+docker compose down -v
+docker compose up
+```
 
 ### Run Locally
 
@@ -39,6 +56,7 @@ encouraged.
 Simply install the dependencies and invoke Juypter:
 
 ```sh
+# (In a Python virtual environment)
 pip install -r requirementes.txt
 jupyter lab --port 8080
 ```
@@ -46,4 +64,16 @@ jupyter lab --port 8080
 If your web browser doesn't open automatically, click the link that appears in
 the console output.
 
-[qiskit]: "https://qiskit.org/"
+## Additional Resources
+
+You may find the following resources to be helpful in learning the foundations
+of quantum computing through Qiskit:
+
+* [Qiskit (IBM)][qiskit]
+* [Qiskit Textbook/Free Course][qiskit-textbook]
+* [Quantum Composer User Guide][ibm-quantum-composer]
+
+[qiskit]: "https://qiskit.org/" "Qiskit"
+[qiskit-textbook]: "https://qiskit.org/learn" "Qiskit Textbook"
+[ibm-quantum-composer]: "https://learning.quantum-computing.ibm.com/tutorial/composer-user-guide" "IBM Quantum Composer User Guide"
+
