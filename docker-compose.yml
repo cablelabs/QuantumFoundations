@@ -1,0 +1,14 @@
+services:
+  qc-foundations-lab:
+    image: qcfoundations:latest
+    build: .
+    container_name: qcfoundations
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: volume
+        source: qcfoundations
+        target: /usr/src/QuantumFoundations
+
+volumes:
+  qcfoundations:
