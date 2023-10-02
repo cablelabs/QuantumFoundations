@@ -1,7 +1,7 @@
 services:
   qc-foundations-lab:
-    image: qcfoundations:latest
-    build: .
+    image: artifactory.cablelabs.com/cl-secpriv-docker/public/qcfoundations:latest
+    #    build: .
     container_name: qcfoundations
     ports:
       - "8080:8080"

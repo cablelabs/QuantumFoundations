@@ -22,9 +22,9 @@ The examples are contained in the following notebooks:
 ### Docker
 
 A Docker image of the notebooks and the dependencies needed to run them is
-provided for a convenient way to jump right into the code.
-
-*An image will be pushed to a public registry from which it can be pulled.*
+provided for a convenient way to jump right into the code. The simplest way to
+do so is to use `docker compose` to instantiate a notebook server with the
+proper port exposed.
 
 To run the example, simply use `docker compose up` in this directory. Once the
 container has been created, click the link in the log output to navigate to the
@@ -46,6 +46,10 @@ reset of the example is to perform the following in this directory:
 docker compose down -v
 docker compose up
 ```
+
+The containerimage is pulled from the CableLabs [Artifactory
+instance][cl-artifactory]; to pull the image manually, simply run `docker pull
+artifactory.cablelabs.com/cl-secpriv-docker/public/qcfoundations:latest`
 
 ### Run Locally
 
