@@ -1,5 +1,4 @@
-# Uncomment the following line if you have trouble running with docker-comopse (v1)
-# version: "3.8"
+version: "3.8" # Version specified for backwards compatibility with v1 of compose
 services:
   qc-foundations-lab:
     image: artifactory.cablelabs.com/cl-secpriv-docker/public/qcfoundations:latest

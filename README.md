@@ -19,7 +19,7 @@ The examples are contained in the following notebooks:
 
 ## Getting Started
 
-### Docker
+### Run with Docker Compose
 
 A Docker image of the notebooks and the dependencies needed to run them is
 provided for a convenient way to jump right into the code. The simplest way to
@@ -47,9 +47,18 @@ docker compose down -v
 docker compose up
 ```
 
-The containerimage is pulled from the CableLabs [Artifactory
+The container image is pulled from the CableLabs [Artifactory
 instance][cl-artifactory]; to pull the image manually, simply run `docker pull
 artifactory.cablelabs.com/cl-secpriv-docker/public/qcfoundations:latest`
+
+#### Run Manually with Docker
+
+If you encounter issues with `docker compose`, the image can be run manually
+with Docker with the following command:
+
+```
+docker run -i -t --name=qcfoundations -p 8080:8080 artifactory.cablelabs.com/cl-secpriv-docker/public/qcfoundations:latest
+```
 
 ### Run Locally
 
